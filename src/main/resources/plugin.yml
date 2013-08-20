@@ -1,0 +1,9 @@
+name: MCBang
+main: tk.gjz010.mcbang.MCBang
+version: 1.5.2
+commands:
+   bang:
+      description: BANG! game command.
+      usage: /<command>
+      permission: <plugin name>.bang
+      permission-message: You don't have <permission>

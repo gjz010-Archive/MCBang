@@ -6,6 +6,7 @@ package tk.gjz010.mcbang.items.basic;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -25,48 +26,51 @@ public class OccupationCard implements BangItem{
     public Occupation getOccupation(){
         return o;
     }
+    @Override
     public List<String> getLore() {
-        List<String> str=new ArrayList<String>();
-        str.add("Your aim is to:");
+        List<String> str=new ArrayList<>();
+        str.add(ChatColor.WHITE+"Your occupation is "+ChatColor.GOLD+getOccupation().toString());
+        str.add(ChatColor.WHITE+"Your aim is to:");
         switch(getOccupation()){
-            case SHERIFF:
-                str.add("kill the outlaws and the thieves.");
+            case Owner:
+                str.add(ChatColor.RED+"kill the griefers and the cheaters.");
                 break;
-            case DEPUTY:
-                str.add("help the sheriff kill the outlaws and the thieves.");
+            case Operator:
+                str.add(ChatColor.RED+"help the sheriff kill the griefers and the cheaters.");
                 break;
-            case THIEF:
-                str.add("kill the outlaws and the sheriff.");
+            case Griefer:
+                str.add(ChatColor.RED+"kill the owner.");
                 break;
-            case OUTLAW:
-                str.add("kill everyone and live at last.");
+            case Cheater:
+                str.add(ChatColor.RED+"kill everyone and live at last.");
                 break;
         }
         return str;
     }
 
+    @Override
     public String getName() {
         return "Occupation card";
     }
 
+    @Override
     public String getPoker() {
         return "";
     }
 
+    @Override
     public ItemStack getItemStack() {
         ItemStack paper=new ItemStack(339,1);
         ItemMeta meta=paper.getItemMeta();
         meta.setDisplayName(getName());
         meta.setLore(getLore());
+        paper.setItemMeta(meta);
         return paper;
-    }
-
-    public void onAction(Player from, Player target) {
     }
 
     @Override
     public void onAction(BangPlayer from, BangPlayer target) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
     }
     
 }

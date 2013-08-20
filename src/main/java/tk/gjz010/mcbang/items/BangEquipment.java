@@ -8,6 +8,7 @@ package tk.gjz010.mcbang.items;
  *
  * @author Administrator
  */
-public interface BangWeapon extends BangItem{
+public interface BangEquipment extends BangItem{
     public int getRange();
+    public boolean replaceItem(BangItem item);
 }

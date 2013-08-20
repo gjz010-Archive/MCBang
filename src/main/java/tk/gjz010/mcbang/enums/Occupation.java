@@ -9,5 +9,5 @@ package tk.gjz010.mcbang.enums;
  * @author Administrator
  */
 public enum Occupation {
-    SHERIFF,DEPUTY,OUTLAW,THIEF;
+    Owner,Operator,Griefer,Cheater;
 }

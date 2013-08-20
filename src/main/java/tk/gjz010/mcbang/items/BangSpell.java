@@ -9,6 +9,5 @@ package tk.gjz010.mcbang.items;
  * @author Administrator
  */
 public interface BangSpell extends BangItem {
-    public boolean isJudgeNeeded();
-    public boolean isSelf();
+    public boolean isDelay();
 }

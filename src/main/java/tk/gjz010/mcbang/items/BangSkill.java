@@ -15,7 +15,8 @@ import tk.gjz010.mcbang.enums.Situation;
  */
 public interface BangSkill extends BangItem{
     public boolean isPassive();
-    public boolean isOnce();
+    public boolean isOncePerTurn();
     public void beforeTurn(BangPlayer p);
     public void afterTurn(BangPlayer p);
+    
 }
